@@ -11,7 +11,7 @@ export default function App() {
    setEnterdGoal(userInput);
   }
   const addGoalHandler = () => {
-    setGoalList(goalList => [...goalList, enterdGoal]);
+    setGoalList(goalList => [enterdGoal, ...goalList]);
   }
 
 
