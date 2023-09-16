@@ -5,12 +5,20 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 export default function App() {
 
   const [enterdGoal, setEnterdGoal] = useState('');
+  const [count, setCount] = useState(0);
 
   const goalInputHandler = (userInput) => {
    setEnterdGoal(userInput);
   }
   const addGoalHandler = () => {
     console.log(enterdGoal);
+  }
+  const updateCount = () => {
+    // setCount(count => count+1);
+    for(let i = 0; i < 1000; i++) {
+      setCount(count => count+1);
+      // setCount(count+i);
+    }
   }
 
 
@@ -22,6 +30,10 @@ export default function App() {
       </View>
       <View style={styles.goalsContainer}>
         <Text>List of Goals...</Text>
+      </View>
+      <View >
+        <Text>{count}</Text>
+        <Button title="Increase" onPress={updateCount} />
       </View>
     </View>
   );
