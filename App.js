@@ -21,6 +21,7 @@ export default function App() {
     setGoalList((currentGoalList) => {
       return currentGoalList.filter((goalItem) => goalItem.id !== id);
     });
+    // testing delete
   }
 
   return (
