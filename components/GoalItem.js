@@ -11,11 +11,15 @@ const GoalItem = ({goalData, deleteGoal}) => {
     } 
 
     return (
-      <Pressable onPress={deleteItem.bind(this, goalData.item.id)}>
         <View style={styles.goalContainer}>
+          <Pressable 
+          android_ripple={{color: '#210644', borderless: true}} 
+          onPress={deleteItem.bind(this, goalData.item.id)}
+          style={({pressed}) => pressed && styles.pressedRipple}
+          >
             <Text style={styles.goalText} >{goalData.item.text}</Text>
+          </Pressable>
         </View>
-      </Pressable>
     );
 };
 
@@ -23,10 +27,13 @@ const styles = StyleSheet.create({
     goalContainer:  {
       backgroundColor: '#5e0acc',
       marginBottom: 8,
-      padding: 8,
       borderRadius: 10
     },
+    pressedRipple: {
+      color: '#210644'
+    },
     goalText: {
+      padding: 8,
       color: '#fff'
     }
   });
