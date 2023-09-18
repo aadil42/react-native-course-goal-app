@@ -5,7 +5,13 @@ import { StyleSheet,
          Button, 
          TextInput, 
          FlatList } from 'react-native';
+<<<<<<< HEAD
 import GoalItem from './components/GoalItem';
+=======
+
+import GoalInput from './components/GoalInput';
+// import { FlatList } from 'react-native-web';
+>>>>>>> goal-input-component
 
 export default function App() {
 
@@ -23,7 +29,8 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
-        <TextInput onChangeText={goalInputHandler} style={styles.textInput} placeholder="Enter your goal." />
+        {/* <TextInput /> */}
+        <GoalInput goalInputHandler={goalInputHandler} styles={styles}/>
         <Button title="Add" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
