@@ -9,23 +9,17 @@ import GoalInput from './components/GoalInput';
 
 export default function App() {
 
-  const [enterdGoal, setEnterdGoal] = useState('');
   const [goalList, setGoalList] = useState([]);
 
-  const goalInputHandler = (userInput) => {
-   setEnterdGoal(userInput);
-  }
-  const addGoalHandler = () => {
+
+  const addGoalHandler = (enterdGoal) => {
     setGoalList(goalList => [{text: enterdGoal, id:  Math.random().toString()}, ...goalList]);
   }
 
 
   return (
     <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <GoalInput goalInputHandler={goalInputHandler} styles={styles}/>
-        <Button title="Add" onPress={addGoalHandler} />
-      </View>
+      <GoalInput addGoalHandler={addGoalHandler} />
       <View style={styles.goalsContainer}>
         <FlatList 
          data={goalList}
@@ -46,15 +40,6 @@ const styles = StyleSheet.create({
   appContainer: {
     padding: 40,
     flex: 1
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flex: 1,
-    borderBottomWidth: 1,
-    borderColor: '#cccccc',
-    marginBottom: 24
   },
   goalsContainer: {
     flex: 5,
