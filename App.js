@@ -3,11 +3,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, 
          View, 
          Button, 
-         TextInput, 
          FlatList } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
-// import { FlatList } from 'react-native-web';
 
 export default function App() {
 
@@ -25,7 +23,6 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
-        {/* <TextInput /> */}
         <GoalInput goalInputHandler={goalInputHandler} styles={styles}/>
         <Button title="Add" onPress={addGoalHandler} />
       </View>
@@ -58,13 +55,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#cccccc',
     marginBottom: 24
-  },
-  textInput: {
-    borderWidth: 1,
-    paddingLeft: 5, 
-    borderColor: '#cccccc',
-    width: '80%',
-    marginRight: 8,
   },
   goalsContainer: {
     flex: 5,
