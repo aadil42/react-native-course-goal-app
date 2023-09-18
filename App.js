@@ -5,13 +5,9 @@ import { StyleSheet,
          Button, 
          TextInput, 
          FlatList } from 'react-native';
-<<<<<<< HEAD
 import GoalItem from './components/GoalItem';
-=======
-
 import GoalInput from './components/GoalInput';
 // import { FlatList } from 'react-native-web';
->>>>>>> goal-input-component
 
 export default function App() {
 
