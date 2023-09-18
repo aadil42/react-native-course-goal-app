@@ -8,6 +8,7 @@ import { StyleSheet,
          ScrollView, 
          FlatList } from 'react-native';
 
+import GoalInput from './components/GoalInput';
 // import { FlatList } from 'react-native-web';
 
 export default function App() {
@@ -26,7 +27,8 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
-        <TextInput onChangeText={goalInputHandler} style={styles.textInput} placeholder="Enter your goal." />
+        {/* <TextInput /> */}
+        <GoalInput goalInputHandler={goalInputHandler} styles={styles}/>
         <Button title="Add" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
