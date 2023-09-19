@@ -29,7 +29,7 @@ const GoalInput = ({addGoalHandler, modalVisibility, hideModal}) => {
                     <Button title="Add" onPress={addGoal} color="#335adaf9" />
                 </View>
                 <View style={styles.button}>
-                    <Button title="Cancel" onPress={hideModal} color="#335adaf9" />
+                    <Button title="Cancel" onPress={hideModal} color="#b90404d3" />
                 </View>
             </View>    
         </View>
