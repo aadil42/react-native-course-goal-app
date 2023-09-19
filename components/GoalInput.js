@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, Button, View, Modal } from "react-native";
+import { StyleSheet, TextInput, Button, View, Modal, Image } from "react-native";
 import { useState } from 'react';
 
 const GoalInput = ({addGoalHandler, modalVisibility, hideModal}) => {
@@ -17,17 +17,21 @@ const GoalInput = ({addGoalHandler, modalVisibility, hideModal}) => {
     return (
     <Modal visible={modalVisibility} animationType="slide">
         <View style={styles.inputContainer}>
+            <Image style={styles.image} source={require('../assets/images/goal.png')} />
             <TextInput onChangeText={goalInputHandler} 
                     style={styles.textInput}  
                     placeholder="Enter your goal."
                     value={enterdGoal}
+                    placeholderTextColor="#ffffff"
             />
-            <View>
-                <Button title="Cancel" onPress={hideModal}/>
-            </View>
-            <View>
-                <Button title="Add" onPress={addGoal} />
-            </View>
+            <View style={styles.buttonContainer}>
+                <View style={styles.button}>
+                    <Button title="Add" onPress={addGoal} color="#335adaf9" />
+                </View>
+                <View style={styles.button}>
+                    <Button title="Cancel" onPress={hideModal} color="#335adaf9" />
+                </View>
+            </View>    
         </View>
     </Modal>    
     );
@@ -35,21 +39,35 @@ const GoalInput = ({addGoalHandler, modalVisibility, hideModal}) => {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
-        borderBottomWidth: 1,
-        borderColor: '#cccccc',
-        marginBottom: 24
+        backgroundColor: '#06217af9'
     },
     textInput: {
       borderWidth: 1,
-      paddingLeft: 5, 
+      padding: 5, 
       borderColor: '#cccccc',
-      width: '80%',
+      width: '85%',
       marginRight: 8,
+      borderRadius: 5,
+      color: "#ffffff"
     },
+    buttonContainer: {
+        flexDirection: 'row', 
+    },
+    button: {
+        width: '25%',
+        marginHorizontal: 16,
+        marginTop: 15,
+        borderRadius: 10,
+    },
+    image: {
+        width: 100,
+        height: 100,
+        marginBottom: 16
+    }
 });
 
 export default GoalInput;
+// #020d31f9

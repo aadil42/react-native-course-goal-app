@@ -28,8 +28,10 @@ export default function App() {
   }
 
   return (
+    <>
+    <StatusBar />
     <View style={styles.appContainer}>
-      <Button title="Add Goal" onPress={showModal}/>
+      <Button title="Add Goal" color="#335adaf9" onPress={showModal}/>
       <GoalInput hideModal={hideModal} modalVisibility={isModalVisible} addGoalHandler={addGoalHandler} />
       <View style={styles.goalsContainer}>
         <FlatList 
@@ -44,15 +46,19 @@ export default function App() {
         />
       </View>
     </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   appContainer: {
     padding: 40,
-    flex: 1
+    flex: 1,
+    paddingHorizontal: 16,
+    backgroundColor: "#021546" // this color should be added in app.json file so it applys to all the pages. For some reason it's not  working there.
   },
   goalsContainer: {
     flex: 5,
-  }
+    marginTop: 16
+  },
 });
