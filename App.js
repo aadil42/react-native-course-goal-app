@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <>
-    <StatusBar />
+    <StatusBar style='light' />
     <View style={styles.appContainer}>
       <Button title="Add Goal" color="#335adaf9" onPress={showModal}/>
       <GoalInput hideModal={hideModal} modalVisibility={isModalVisible} addGoalHandler={addGoalHandler} />
